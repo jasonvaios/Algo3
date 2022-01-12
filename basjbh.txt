@@ -1,0 +1,17 @@
+﻿Frond tips
+
+Για καθε χρονοσειρα τα πρωτα στοιχεια θα εινια το input και τα τελευταια το output
+keras – tensorflow python  
+peiramatismos 
+    • me arithmo strwmatwn megethous
+    • posa gia input posa gia output apo kathe xronoseira?
+
+ Des 26 lepto frond κτι για τα ερρορ out put?
+
+ 
+
+ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
+sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
+sudo apt-get update
