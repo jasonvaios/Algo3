@@ -41,7 +41,7 @@ if(n>rows):
 
 # n=1
 model = keras.models.load_model("./Bmodel")
-for j in range(0,n):
+for j in range(n):
 
     input= df.iloc[j,colls-testsize-window:].values#1
     input=input.reshape(-1,1)
@@ -49,8 +49,8 @@ for j in range(0,n):
     x_test=[]
     y_test=[]
     for i in range(window,len(input)):
-        x_test.append(input[i*(j+1)-window:(j+1)*i,0])
-        y_test.append(input[(j+1)*i,0])
+        x_test.append(input[i-window:i,0])
+        y_test.append(input[i,0])
         
     x_test=np.array(x_test)
     y_test=np.array(y_test)
@@ -60,8 +60,8 @@ for j in range(0,n):
     X_test_pred = model.predict(x_test)
 
     test_mae_loss = np.mean(np.abs(X_test_pred - x_test), axis=1)
-    test_mae_loss = qt.inverse_transform(test_mae_loss)
-    print(test_mae_loss.shape)
+    # test_mae_loss = qt.inverse_transform(test_mae_loss)
+    # print(test_mae_loss)
     #test_score_df = pd.DataFrame(index=)
     #test_score_df = pd.DataFrame(index=test[TIME_STEPS:].index)
     test_score_df = pd.DataFrame(index=range(testsize))
